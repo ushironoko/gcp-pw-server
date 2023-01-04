@@ -14,4 +14,6 @@ jobs:
       - uses: hashicorp/setup-terraform@v2.0.3
       - name: Run a terraform plan command
         working-directory: ./terraform
-        run: terraform plan
+        run: |
+          terraform init
+          terraform plan
