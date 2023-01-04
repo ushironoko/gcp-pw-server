@@ -1,0 +1,17 @@
+name: terraform plan
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: hashicorp/setup-terraform@v2.0.3
+      - name: Run a terraform plan command
+      - working-directory: ./terraform
+        run: terraform plan
