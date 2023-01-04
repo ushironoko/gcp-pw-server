@@ -9,3 +9,7 @@ echo 'project = "<GCP_PROJECT>"' > terraform.tfvars
 terraform plan
 terraform apply # IP Address is output
 ```
+
+### References
+- https://registry.terraform.io/modules/terraform-google-modules/container-vm/google
+- https://github.com/itzg/docker-minecraft-server
