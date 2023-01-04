@@ -13,5 +13,5 @@ jobs:
       - uses: actions/checkout@v3
       - uses: hashicorp/setup-terraform@v2.0.3
       - name: Run a terraform plan command
-      - working-directory: ./terraform
+        working-directory: ./terraform
         run: terraform plan
