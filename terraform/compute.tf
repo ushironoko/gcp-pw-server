@@ -31,7 +31,7 @@ resource "google_compute_instance" "mc_server" {
 
   boot_disk {
     initialize_params {
-      type  = "pd-ssd" //
+      type  = "pd-ssd" // https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance#type
       size  = 100
       image = module.gce-container.source_image
     }
