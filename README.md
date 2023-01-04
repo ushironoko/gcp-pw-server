@@ -1,1 +1,1 @@
-# gcp-mc-container
+# GCP Minecraft Server
