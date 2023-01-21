@@ -9,12 +9,12 @@ variable "region" {
 }
 
 variable "zone" {
-  type = string
+  type    = string
   default = "asia-northeast1-a"
 }
 
 variable "machine_type" {
-  type = string
+  type    = string
   default = "n1-standard-1"
 }
 
