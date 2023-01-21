@@ -25,8 +25,8 @@ module "gce-container" {
 
 resource "google_compute_instance" "mc_server" {
   name         = "mc-server"
-  machine_type = "n1-standard-1"
-  zone         = "asia-northeast1-a"
+  machine_type = var.machine_type
+  zone         = var.zone
   tags         = var.network_tags
 
   boot_disk {
