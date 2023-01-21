@@ -7,7 +7,7 @@ This is a Terraform resource to easily setup a Minecraft server on GCP.
 cd terraform
 echo 'project = "<GCP_PROJECT>"' > terraform.tfvars
 terraform plan
-terraform apply # IP Address is output
+terraform apply # Connect to this ip address
 ```
 
 ### References
