@@ -1,6 +1,6 @@
 variable "project" {
   type    = string
-  default = "sample" # FIXME or create terraform.tfvars file
+  default = "ushironoko-pw" # FIXME or create terraform.tfvars file
 }
 
 variable "region" {
@@ -20,5 +20,5 @@ variable "machine_type" {
 
 variable "network_tags" {
   type    = list(string)
-  default = ["minecraft"]
+  default = ["palworld"]
 }

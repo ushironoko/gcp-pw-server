@@ -5,26 +5,26 @@ module "gce-container" {
   restart_policy   = "Always"
 
   container = {
-    image = "docker.io/itzg/minecraft-server"
+    image = "docker.io/thijsvanloef/palworld-server-docker"
     env = [
       {
-        name  = "TYPE"
-        value = "SPIGOT"
+        name  = "PLAYERS"
+        value = "4"
       },
       {
-        name  = "VERSION"
-        value = "1.19.3"
+        name  = "PORT"
+        value = "8211"
       },
       {
-        name  = "EULA"
-        value = "true"
+        name  = "MULTITHREADING"
+        value = "false"
       },
     ]
   }
 }
 
-resource "google_compute_instance" "mc_server" {
-  name         = "mc-server"
+resource "google_compute_instance" "pw_server" {
+  name         = "pw-server"
   machine_type = var.machine_type
   zone         = var.zone
   tags         = var.network_tags
@@ -54,12 +54,12 @@ resource "google_compute_instance" "mc_server" {
   }
 }
 
-resource "google_compute_firewall" "mc_rule" {
-  name    = "minecraft"
+resource "google_compute_firewall" "pw_rule" {
+  name    = "palworld"
   network = "default"
   allow {
-    protocol = "tcp"
-    ports    = ["25565"]
+    protocol = "udp"
+    ports    = ["8211"]
   }
   source_ranges = ["0.0.0.0/0"]
   target_tags   = var.network_tags
