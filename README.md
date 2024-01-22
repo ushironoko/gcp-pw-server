@@ -1,4 +1,5 @@
 # GCP Minecraft Server
+
 This is a Terraform resource to easily setup a Minecraft server on GCP.
 
 ## Quick start
@@ -11,5 +12,6 @@ terraform apply # Connect to this ip address
 ```
 
 ### References
+
 - https://registry.terraform.io/modules/terraform-google-modules/container-vm/google
-- https://github.com/itzg/docker-minecraft-server
+- https://github.com/thijsvanloef/palworld-server-docker
