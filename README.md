@@ -1,4 +1,4 @@
-# GCP Minecraft Server
+# GCP Palworld Server
 
 This is a Terraform resource to easily setup a Palworld server on GCP.
 
