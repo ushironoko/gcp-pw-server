@@ -1,16 +1,16 @@
 variable "project" {
   type    = string
-  default = "ushironoko-pw" # FIXME or create terraform.tfvars file
+  default = "sample" # FIXME or create terraform.tfvars file
 }
 
 variable "region" {
   type    = string
-  default = "asia-northeast2"
+  default = "asia-northeast1"
 }
 
 variable "zone" {
   type    = string
-  default = "asia-northeast2-a"
+  default = "asia-northeast1-a"
 }
 
 variable "machine_type" {
