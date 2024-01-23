@@ -5,17 +5,17 @@ variable "project" {
 
 variable "region" {
   type    = string
-  default = "asia-northeast1"
+  default = "asia-northeast2"
 }
 
 variable "zone" {
   type    = string
-  default = "asia-northeast1-a"
+  default = "asia-northeast1-c"
 }
 
 variable "machine_type" {
   type    = string
-  default = "n1-highmem-2"
+  default = "e2-standard-4"
 }
 
 variable "network_tags" {
