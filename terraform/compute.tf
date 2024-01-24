@@ -22,7 +22,7 @@ module "gce-container" {
     ]
     volumeMounts = [
       {
-        mountPath = "/Palworld"
+        mountPath = "/palworld"
         name      = "palworld-volume"
         readOnly  = false
       },
