@@ -34,7 +34,7 @@ module "gce-container" {
       name = "palworld-volume"
 
       gcePersistentDisk = {
-        pdName = "palworld-disk"
+        pdName = "palworld-volume"
         fsType = "ext4"
       }
     },
@@ -49,10 +49,14 @@ resource "google_compute_instance" "pw_server" {
 
   boot_disk {
     initialize_params {
-      type  = "pd-ssd" // https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance#type
-      size  = 100
       image = module.gce-container.source_image
     }
+  }
+  
+  attached_disk {
+    source      = google_compute_disk.pd.self_link
+    device_name = "palworld-volume"
+    mode        = "READ_WRITE"
   }
 
   network_interface {
@@ -72,8 +76,16 @@ resource "google_compute_instance" "pw_server" {
   }
 }
 
-resource "google_compute_firewall" "pw_rule" {
-  name    = "palworld"
+resource "google_compute_disk" "pd" {
+  project = var.project
+  name    = "pw-disk"
+  type    = "pd-ssd"
+  zone    = var.zone
+  size    = 100
+}
+
+resource "google_compute_firewall" "pw_rule_b" {
+  name    = "pw-firewall"
   network = "default"
   allow {
     protocol = "udp"
